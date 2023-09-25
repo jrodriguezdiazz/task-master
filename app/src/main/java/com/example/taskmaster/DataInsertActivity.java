@@ -17,16 +17,38 @@ public class DataInsertActivity extends AppCompatActivity {
         binding = ActivityDataInsertBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra("title", binding.title.getText().toString());
-                intent.putExtra("disp", binding.disp.getText().toString());
-                setResult(RESULT_OK, intent);
-                finish();
-            }
-        });
+        String type = getIntent().getStringExtra("type");
+        System.out.println(type);
+        if (type.equals("update")) {
+            setTitle("Update the note");
+            binding.title.setText(getIntent().getStringExtra("title"));
+            binding.disp.setText(getIntent().getStringExtra("disp"));
+            int id = getIntent().getIntExtra("id", 0);
+            binding.add.setText("Update note");
+            binding.add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.putExtra("title", binding.title.getText().toString());
+                    intent.putExtra("disp", binding.disp.getText().toString());
+                    intent.putExtra("id", id);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            });
+        } else {
+            setTitle("Add a note");
+            binding.add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.putExtra("title", binding.title.getText().toString());
+                    intent.putExtra("disp", binding.disp.getText().toString());
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            });
+        }
     }
 
     @Override
