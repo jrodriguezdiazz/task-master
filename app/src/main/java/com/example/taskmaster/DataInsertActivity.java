@@ -9,14 +9,15 @@ import android.view.View;
 import com.example.taskmaster.databinding.ActivityDataInsertBinding;
 
 public class DataInsertActivity extends AppCompatActivity {
-ActivityDataInsertBinding binding;
+    ActivityDataInsertBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDataInsertBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.add.setOnClickListener( new View.OnClickListener() {
+        binding.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
@@ -26,6 +27,11 @@ ActivityDataInsertBinding binding;
                 finish();
             }
         });
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(DataInsertActivity.this, MainActivity.class));
     }
 }

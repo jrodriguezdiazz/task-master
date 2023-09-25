@@ -3,26 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="60dp"
+    android:layout_margin="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="#8A8A8A"
+    app:barrierMargin="20dp">
+
+    <TextView
+        android:id="@+id/dispRv"
+        android:layout_width="103dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="Your Description"
+        android:textColor="#000000"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/titleRv"
+        app:layout_constraintTop_toBottomOf="@+id/titleRv" />
 
     <TextView
         android:id="@+id/titleRv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:hint="Your Title"
         android:textColor="#000000"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/dispRv"
-        android:layout_width="103dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Your Description"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/titleRv"
-        app:layout_constraintTop_toBottomOf="@+id/titleRv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
