@@ -7,15 +7,31 @@
     android:layout_margin="20dp"
     android:layout_marginBottom="20dp"
     android:background="#8A8A8A"
-    app:barrierMargin="20dp">
+    app:barrierMargin="20dp"
+    app:circularflow_defaultRadius="30dp"
+    app:circularflow_radiusInDP="30dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_task_alt_24"
+        tools:srcCompat="@drawable/baseline_task_alt_24" />
 
     <TextView
         android:id="@+id/dispRv"
         android:layout_width="103dp"
         android:layout_height="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
         android:hint="Your Description"
         android:textColor="#000000"
+        android:textSize="12dp"
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="@+id/titleRv"
         app:layout_constraintTop_toBottomOf="@+id/titleRv" />
@@ -24,11 +40,11 @@
         android:id="@+id/titleRv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
         android:hint="Your Title"
         android:textColor="#000000"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
