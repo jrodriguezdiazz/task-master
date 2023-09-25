@@ -26,7 +26,8 @@ public class RVAdapter extends ListAdapter<Note, RVAdapter.ViewHolder> {
 
         @Override
         public boolean areContentsTheSame(@NonNull Note oldItem, @NonNull Note newItem) {
-            return oldItem.getTitle().equals(newItem.getTitle()) && oldItem.getDisp().equals(newItem.getDisp());
+            return oldItem.getTitle().equals(newItem.getTitle())
+                    && oldItem.getDisp().equals(newItem.getDisp());
         }
     };
 
@@ -39,7 +40,9 @@ public class RVAdapter extends ListAdapter<Note, RVAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Note note = getNote(position);
+        holder.binding.titleRv.setText(note.getTitle());
+        holder.binding.dispRv.setText(note.getDisp());
     }
 
     public Note getNote(int position) {

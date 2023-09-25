@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/titleRv"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Your Title"
+        android:hint="Your Title"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="103dp"
         android:layout_height="16dp"
         android:layout_marginTop="16dp"
-        android:text="Your Description"
+        android:hint="Your Description"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/titleRv"
         app:layout_constraintTop_toBottomOf="@+id/titleRv" />

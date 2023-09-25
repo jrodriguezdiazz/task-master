@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.taskmaster.databinding.ActivityDataInsertBinding;
 import com.example.taskmaster.databinding.ActivityMainBinding;
@@ -24,7 +25,9 @@ private NoteViewModel noteViewModel;
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        noteViewModel = new ViewModelProvider(this, (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(NoteViewModel.class);
+        noteViewModel = new ViewModelProvider(this,
+                (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication()))
+                .get(NoteViewModel.class);
         binding.floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +58,7 @@ private NoteViewModel noteViewModel;
             String disp = data.getStringExtra("disp");
             Note note = new Note(title, disp);
             noteViewModel.insert(note);
+            Toast.makeText(this, "note added", Toast.LENGTH_SHORT ).show();
         }
     }
 }

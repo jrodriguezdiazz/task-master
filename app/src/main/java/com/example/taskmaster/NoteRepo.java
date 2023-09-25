@@ -16,7 +16,6 @@ public class NoteRepo {
         NoteDatabase noteDatabase = NoteDatabase.getInstance(application);
         noteDao = noteDatabase.noteDao();
         noteList = noteDao.getAllData();
-
     }
 
     public void insertData(Note note) {
@@ -24,11 +23,11 @@ public class NoteRepo {
     }
 
     public void updateData(Note note) {
-
+        new UpdateTask(noteDao).execute(note);
     }
 
     public void deleteData(Note note) {
-
+        new DeleteTask(noteDao).execute(note);
     }
 
     public LiveData<List<Note>> getAllData() {
@@ -44,15 +43,16 @@ public class NoteRepo {
 
         @Override
         protected Void doInBackground(Note... notes) {
+            System.out.println(notes[0].getTitle());
             noteDao.insert(notes[0]);
             return null;
         }
     }
 
-    private static class DeletetTask extends AsyncTask<Note, Void, Void> {
+    private static class DeleteTask extends AsyncTask<Note, Void, Void> {
         private NoteDao noteDao;
 
-        public DeletetTask(NoteDao noteDao) {
+        public DeleteTask(NoteDao noteDao) {
             this.noteDao = noteDao;
         }
 
