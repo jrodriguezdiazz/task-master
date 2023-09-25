@@ -15,6 +15,10 @@ public class Note {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Note(String title, String disp) {
         this.title = title;
         this.disp = disp;

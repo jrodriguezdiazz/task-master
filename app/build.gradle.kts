@@ -6,6 +6,10 @@ android {
     namespace = "com.example.taskmaster"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.taskmaster"
         minSdk = 24
@@ -52,6 +56,6 @@ dependencies {
     // Annotation processor
     implementation("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
 
-    implementation ("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
 }
